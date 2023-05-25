@@ -92,10 +92,20 @@
 //     }
 // }
 
-for(int i = 1; i < 40; i++) Console.WriteLine($"{i}! = {Factorial(i)}");
+// for(int i = 1; i < 40; i++) Console.WriteLine($"{i}! = {Factorial(i)}");
 
-double Factorial(int n)
+// double Factorial(int n)
+// {
+//     if (n == 1) return 1;
+//     else return n*Factorial(n - 1);
+// }  
+
+// f(1) = 1; f(2) = 1; f(n) = f(n - 1) + f(n - 2);
+
+for(int i = 1; i < 50; i++) Console.WriteLine($"f({i}) = {Function(i)}");
+
+int Function(int n)
 {
-    if (n == 1) return 1;
-    else return n*Factorial(n - 1);
-}  
+    if(n < 3) return 1; 
+    else return Function(n - 1) + Function (n - 2);
+}
