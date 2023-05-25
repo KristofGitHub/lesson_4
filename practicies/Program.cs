@@ -7,26 +7,87 @@
 // table[1, 2] = "слово";
 // PrintArray(table, 2, 3);
 
-int[,] matrix = new int[4, 6];
-RandomFillArray(matrix);
-PrintArray(matrix);
+// int[,] matrix = new int[4, 6];
+// RandomFillArray(matrix);
+// PrintArray(matrix);
 
-int[,] RandomFillArray(int[,] array)
+// int[,] RandomFillArray(int[,] array)
+// {
+//     for(int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for(int j = 0; j < array.GetLength(1); j++) array[i, j] = new Random().Next(0, 10);
+//     }
+//     return array;
+// }
+
+// void PrintArray(int[,] array)
+// {
+//     int rows = matrix.GetLength(0);
+//     int cols = matrix.GetLength(1);
+//     for(int i = 0; i < rows; i++)
+//     {
+//         for(int j = 0; j < cols; j++) Console.Write($"{array[i, j]} ");
+//         Console.WriteLine();
+//     }
+//     Console.WriteLine();
+// }
+
+int[,] matrix = new int[,]
 {
-    for(int i = 0; i < array.GetLength(0); i++)
-    {
-        for(int j = 0; j < array.GetLength(1); j++) array[i, j] = new Random().Next(0, 10);
-    }
-    return array;
-}
+    {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+    {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+    {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+    {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+    {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+    {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+    {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+    {0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+    {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+    {0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+    {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+    {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0},
+    {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+    {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+    {0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0},
+    {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+    {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+    {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0},
+    {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
+    {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
+    {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0},
+    {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+    {0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+    {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0},
+    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+};
 
-void PrintArray(int[,] array)
+PrintPicture(matrix);
+FillPicture(12, 12);
+PrintPicture(matrix);
+
+void PrintPicture(int[,] array)
 {
     int rows = matrix.GetLength(0);
     int cols = matrix.GetLength(1);
+    Console.WriteLine();
     for(int i = 0; i < rows; i++)
     {
-        for(int j = 0; j < cols; j++) Console.Write($"{array[i, j]} ");
+        for(int j = 0; j < cols; j++) 
+        if (array[i, j] == 1) Console.Write("+"); else Console.Write(" ");
         Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+void FillPicture(int row, int col)
+{
+    if(matrix[row, col] == 0)
+    {
+        matrix[row, col] = 1;
+        FillPicture(row - 1, col); // вверх
+        FillPicture(row, col - 1); // влево
+        FillPicture(row + 1, col); // вниз
+        FillPicture(row, col + 1); // вправо
     }
 }
